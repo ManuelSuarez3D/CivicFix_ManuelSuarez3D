@@ -1,0 +1,37 @@
+<form action="/part/{{part.id}}" method="POST">
+    <h2>{{part.name}}</h2>
+    <br>
+    <div style="display: flex; align-items: flex-start;">
+        <div style="margin-right: 10px;">
+            <table border="1">
+                <tr>
+                    <th style="padding: 5px;">MODEL</th>
+                    <th style="padding: 5px;">YEAR</th>
+                </tr>
+                {{#each part.compatibility as | item key |}}
+                    <tr>
+                        {{#each item}}
+                            <td align="center" style="padding: 5px;">{{this}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </table>
+            <form action="" style="margin-top: 10px;">
+                <div style="margin-bottom: 5px;">Part Number: {{part.partNumber}}</div>
+                {{#if isLoggedOut}}
+                <div style="margin-bottom: 5px;">Quantity:
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+                </div>
+                {{/if}}
+                <div style="margin-bottom: 5px;">Price: {{formatPrice part.price}}</div>
+                <br>
+                {{#if isLoggedOut}}
+                    <button type="submit">Add to Cart</button>
+                {{/if}}
+            </form>
+        </div>
+        <div>
+            <img src="{{part.image}}" alt="" width="300" height="275" style="border: 2px solid #ccc; padding: 5px;">
+        </div>
+    </div>
+</form>

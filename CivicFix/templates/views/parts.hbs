@@ -1,0 +1,47 @@
+<form action="/parts" method="GET">
+    <div>
+        Filter by Model:
+        <select id="models" name="model">
+            <option value="All">All</option>
+            {{#each models}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+        Filter by Type:
+        <select id="types" name="type">
+            <option value="All">All</option>
+            {{#each types}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+        <button type="submit">Apply Filters</button>
+    </div>
+</form>
+<br>
+
+{{#if inventory.length}}
+<table border="1">
+    <tr>
+        <td></td>
+        <td align="center">NAME</td>
+        <td align="center">MODEL</td>
+        <td align="center">PRICE</td>
+    </tr>
+        {{#each inventory}}
+            <tr>
+                <td>
+                    <a href='/part/{{this.id}}'>
+                        <img src='{{this.image}}' alt='' width='85' height='75' />
+                    </a>
+                </td>
+                <td align="center">{{this.name}}</td>
+                <td align="center">{{this.models}}</td>
+                <td align="center">{{formatPrice this.price}}</td>
+            </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <h1 align="center">- No parts found -</h1>
+{{/if}}

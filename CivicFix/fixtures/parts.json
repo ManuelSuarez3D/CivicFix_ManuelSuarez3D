@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Duralast Ceramic Brake Pads D537",
+    "partNumber": "D537",
+    "image": "/img/brakepad_01.png",
+    "type": "Brakes",
+    "models": [
+      "Civic EX",
+      "Civic EX-L"
+    ],
+    "compatibility": {
+      "Civic EX": [
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015"
+      ],
+      "Civic EX-L": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015"
+      ]
+    },
+    "price": 38.99
+  },
+  {
+    "name": "Duralast Platinum EFB Battery BCI Group Size 47 650 CCA H5-EFB",
+    "partNumber": "H5-EFB",
+    "image": "/img/battery_01.png",
+    "type": "Batteries",
+    "models": [
+      "Civic EX",
+      "Civic EX-L"
+    ],
+    "compatibility": {
+      "Civic EX": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "Civic EX-L": [
+        "2022",
+        "2023"
+      ]
+    },
+    "price": 249.99
+  },
+  {
+    "name": "Duralast Alternator 11537",
+    "partNumber": "11537",
+    "image": "/img/Alternator_01.png",
+    "type": "Alternators",
+    "models": [
+      "Civic EX",
+      "Civic EX-L"
+    ],
+    "compatibility": {
+      "Civic EX": [
+        "2012",
+        "2013",
+        "2014",
+        "2015"
+      ],
+      "Civic EX-L": [
+        "2012",
+        "2013",
+        "2014",
+        "2015"
+      ]
+    },
+    "price": 199.99
+  },
+  {
+    "name": "STP Extended Life Oil Filter S7317XL",
+    "partNumber": "S7317XL",
+    "image": "/img/oilfilter_01.png",
+    "type": "Oil Filters",
+    "models": [
+      "Civic EX",
+      "Civic EX-L"
+    ],
+    "compatibility": {
+      "Civic EX": [
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "Civic EX-L": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ]
+    },
+    "price": 9.99
+  },
+  {
+    "name": "STP Extended Life Oil Filter S2XL",
+    "partNumber": "S2XL",
+    "image": "/img/oilfilter_02.png",
+    "type": "Oil Filters",
+    "models": [
+      "Civic CRX"
+    ],
+    "compatibility": {
+      "Civic CRX": [
+        "1984",
+        "1985",
+        "1986",
+        "1987"
+      ]
+    },
+    "price": 9.99
+  }
+]

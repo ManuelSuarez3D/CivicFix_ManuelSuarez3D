@@ -1,0 +1,208 @@
+<h1>Current Inventory</h1>
+
+<form action="/manage" method="GET">
+    <div>
+        Filter by Model:
+        <select id="models" name="model">
+            <option value="All">All</option>
+            {{#each models}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+        Filter by Type:
+        <select id="types" name="type">
+            <option value="All">All</option>
+            {{#each types}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+        <button type="submit">Apply Filters</button>
+    </div>
+</form>
+
+<input type="checkbox" id="toggleForm">
+<label id="showFormButton" for="toggleForm">Add Part</label>
+
+<input type="checkbox" id="toggleUpdateForm">
+<label id="showUpdateFormButton" for="toggleUpdateForm">Update Part</label>
+
+<div id="formContainer">
+    <form id="addPartForm" action="/manage/add" method="POST" class="form-flex">
+        <h2 align="center">Add Part Form</h2>
+        <h3 align="center">* are Required</h3><br>
+
+        <div class="left-section">
+            <div>
+                <label for="name">Name*:</label>
+                <input type="text" id="name" name="name" placeholder="Enter name" required>
+            </div>
+
+            <label for="models">Models* and Compatibility*:</label><br>
+            <div class="checkboxes-row">
+
+            {{#each (getUniqueModels inventory)}}
+                <input type="checkbox" name="models" id="model_{{@index}}" value="{{this}}">
+                <label for="model_{{@index}}">{{this}}</label><br>
+                <div class="right-section">
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 1985 1995)}}
+                            <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                            <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 1996 2006)}}
+                            <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                            <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 2007 2017)}}
+                            <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                            <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 2018 2024)}}
+                            <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                            <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+
+            <div>
+                <label for="type">Type*:</label>
+                <input type="text" id="type" name="type" placeholder="Enter Type" required>
+            </div>
+
+            <div>
+                <label for="price">Price*:</label>
+                <input type="number" id="price" name="price" placeholder="Enter Price" required>
+            </div>
+            <div>
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" name="image" placeholder="Enter URL">
+            </div>
+            <div>
+                <label for="partNumber">Part Number*:</label>
+                <input type="text" id="partNumber" name="partNumber" minlength="1" pattern=".*\S+.*" 
+                    title="Name must contain at least one non-space character" placeholder="Enter Part Number" required>
+            </div>
+        </div>
+        <button type="submit">Add Part</button>
+    </form>
+</div>
+
+<div id="updateFormContainer">
+    <form id="updatePartForm" action="/manage/update" method="POST" class="form-flex">
+        <h2 align="center">Update Part Form</h2>
+            <h3 align="center">* are Required</h3><br>
+        <div class="left-section">
+            <div>
+                <label for="updateSelect">Select Part to Update:</label>
+                <select id="updateSelect" name="partId">
+                    {{#each inventory}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+
+            </div>
+            <label for="models">Models* and Compatibility*:</label><br>
+            <div class="checkboxes-row">
+                {{#each (getUniqueModels inventory)}}
+                <input type="checkbox" name="models" id="model_{{@index}}" value="{{this}}">
+                <label for="model_{{@index}}">{{this}}</label><br>
+                <div class="right-section">
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 1985 1995)}}
+                        <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                        <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 1996 2006)}}
+                        <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                        <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 2007 2017)}}
+                        <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                        <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                    <div class="checkboxes-row">
+                        {{#each (yearsInRange 2018 2024)}}
+                        <input type="checkbox" id="compatibility_{{../this}}_{{this}}" name="compatibility_{{../this}}_{{this}}" value="{{this}}">
+                        <label for="compatibility_{{../this}}_{{this}}">{{this}}</label><br>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div>
+                <label for="type">Type*:</label>
+                <input type="text" id="type" name="type" placeholder="Enter Type" required>
+            </div>
+
+            <div>
+                <label for="price">Price*:</label>
+                <input type="number" id="price" name="price" placeholder="Enter Price" required>
+            </div>
+
+            <div>
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" name="image" placeholder="Enter URL">
+            </div>
+
+            <div>
+                <label for="partNumber">Part Number*:</label>
+                <input type="text" id="partNumber" name="partNumber" minlength="1" value="{{this.partNumber}}"pattern=".*\S+.*" 
+                    title="Name must contain at least one non-space character" placeholder="Enter Part Number" required>
+            </div>
+        </div>
+        <button type="submit">Update Part</button>
+    </form>
+</div>
+
+<br>
+<br>
+{{#if inventory.length}}
+<table border="1">
+    <tr>
+        <td></td>
+        <td align="center">NAME</td>
+        <td align="center">MODEL</td>
+        <td align="center">PRICE</td>
+        <td align="center">MANAGE</td>
+    </tr>
+        {{#each inventory}}
+            <tr>
+                <td>
+                    <a href='/part/{{this.id}}'>
+                        <img src='{{this.image}}' alt='' width='85' height='75' />
+                    </a>
+                </td>
+                <td align="center">{{this.name}}</td>
+                <td align="center">{{this.models}}</td>
+                <td align="center">{{formatPrice this.price}}</td>
+                <td>
+                    <form action="/manage/delete/{{this._id}}" method="POST">
+                        <div class="action-button-container">
+                            <button type="submit">DELETE</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+
+        {{/each}}
+
+    </table>
+
+{{else}}
+    <h1 align="center">- No items found -</h1>
+{{/if}}

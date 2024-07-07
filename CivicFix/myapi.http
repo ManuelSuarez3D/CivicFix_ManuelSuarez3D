@@ -1,0 +1,61 @@
+POST http://localhost:7000/login
+Content-Type: application/json
+
+{
+  "user": "dev",
+  "password": "dev1234"
+}
+
+###
+GET http://localhost:7000/api/getParts
+
+###
+GET http://localhost:7000/api/getPart/
+
+
+###
+POST http://localhost:7000/api/addPart
+Content-Type: application/json
+
+  {
+    "name": "Sylvania XtraVision Headlight Bulb 9003XV-2",
+    "partNumber": "41-107",
+    "image": "https://contentinfo.autozone.com/znetcs/product-info/en/US/syl/9003XV-2/image/1/",
+    "type": "Headlight Bulb",
+    "models": [
+      "Civic DX"
+    ],
+    "compatibility": {
+      "Civic DX": [
+        "1994"
+      ]
+    },
+    "price": 39.99
+  }
+
+###
+PUT http://localhost:7000/api/updatePart/
+Content-Type: application/json
+
+  {
+    "_id": "",
+    "name": "Sylvania XtraVision Headlight Bulb 9003XV-2",
+    "partNumber": "41-107",
+    "image": "https://contentinfo.autozone.com/znetcs/product-info/en/US/syl/9003XV-2/image/1/",
+    "type": "Headlight Bulb",
+    "models": [
+      "Civic DX"
+    ],
+    "compatibility": {
+      "Civic DX": [
+        "1994", "1998","1999",
+        "2000","2001","2002",
+        "2003"
+      ]
+    },
+    "price": 39.99
+  }
+
+###
+DELETE  http://localhost:7000/api/deletePart/
+

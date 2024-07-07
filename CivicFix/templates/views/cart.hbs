@@ -1,0 +1,58 @@
+{{#if cart.length}}
+<table border="1">
+    <tr>
+        <td></td>
+        <td align="center">NAME</td>
+        <td align="center">MODEL</td>
+        <td align="center">PRICE</td>
+        <td align="center">QUANTITY</td>
+        <td></td>
+    </tr>
+        {{#each cart}}
+            <tr>
+                <td align="center">
+                <form action="/part/{{this.itemId}}" method="GET">
+                    <div class="action-button-container">
+                        <button type="submit" >VIEW</button>
+                    </div>
+                </form>
+                </td>
+                <td align="center">{{this.name}}</td>
+                <td align="center">{{this.partNumber}}</td>
+                <td align="center">{{formatPrice this.price}}</td>
+                <td align="center">
+                    <div class="quantity-input-container">
+                        <form action="/cart/update/{{this.itemId}}" method="POST">
+                            <div class="action-button-container">
+                            <input type="number" id="quantity" name="quantity" min="1" max="100" value="{{this.quantity}}">
+                                <button type="submit">UPDATE</button>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+                <td align="center">
+                    <form action="/cart/delete/{{this.itemId}}" method="POST">
+                        <div class="action-button-container">
+                            <button type="submit">DELETE</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+
+    </table>
+    <table border="1">
+         <tr>
+            <td>TOTAL:</td>
+            <td>{{formatPrice priceTotal}}</td>
+         </tr>
+    </table>
+    <br>
+    <div align="center">
+        <form action="/purchase" method="post">
+            <button type="submit">CHECKOUT</button>
+        </form>
+    </div>
+{{else}}
+    <h1 align="center">- Cart is empty -</h1>
+{{/if}}

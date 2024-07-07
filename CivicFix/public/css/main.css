@@ -1,0 +1,145 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  width: 1080px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: large;
+}
+
+main {
+  padding-top: 50px;
+}
+
+nav {
+  padding-bottom: 20px;
+}
+
+.order-table-img {
+  width: 50%;
+}
+
+a {
+  color: grey;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table td {
+  font-size: 1.25em;
+}
+
+header {
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+  color: #b3b3b3;
+  background: #f2f2f2;
+  background: -webkit-linear-gradient(#f2f2f2 #fff);
+  background: -moz-linear-gradient(#f2f2f2, #fff);
+  background: linear-gradient(#f2f2f2, #fff);
+}
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  color: #b3b3b3;
+  background: #f2f2f2;
+  background: -webkit-linear-gradient(#f2f2f2 #fff);
+  background: -moz-linear-gradient(#f2f2f2, #fff);
+  background: linear-gradient(#f2f2f2, #fff);
+}
+
+.quantity-input-container,
+.action-button-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-input-container input,
+.action-button-container button {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+#toggleForm,
+#toggleUpdateForm {
+  display: none;
+}
+
+#showFormButton,
+#showUpdateFormButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #808080;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#formContainer,
+#updateFormContainer {
+  display: flex;
+  justify-content: center;
+}
+#formContainer,
+#updateFormContainer {
+  display: none;
+}
+
+.left-section {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.right-section {
+  width: 250px;
+  margin-left: 20px;
+}
+
+.toggle-section {
+  margin-bottom: 10px;
+}
+
+.checkboxes-row {
+  display: inline-table;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkboxes-row-row input {
+  margin-left: 10px;
+}
+
+#toggleForm:checked ~ #formContainer,
+#toggleUpdateForm:checked ~ #updateFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-flex {
+  width: 100%;
+  max-width: 800px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

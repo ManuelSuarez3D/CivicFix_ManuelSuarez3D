@@ -1,0 +1,29 @@
+{
+  "name": "civicfix_manuelsuarez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "app": "nodemon src/app.js -e hbs,js,env",
+    "cleanup": "node src/scripts/cleanup.js",
+    "dev": "env-cmd -f ./config/dev.env concurrently \"npm run app\" \"npm run cleanup\"",
+    "seed": "env-cmd -f ./config/dev.env node src/scripts/seedDatabase.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "cron": "^3.1.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.4.4",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^3.1.4"
+  }
+}

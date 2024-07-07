@@ -1,0 +1,32 @@
+<div class="d-flex flex-row justify-content-around" align="center">
+    <div class="card mt-3">
+        <div class="card-body">
+            <form method="POST" action="login">
+                <div class="form-group">
+                    <label for="user">Username:</label>
+                    <input class="form-control" type="text" id="user" name="user" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" id="password" name="password" /><br>
+                    <input type="checkbox" id="togglePassword" class="mt-2"> Show Password
+                </div>
+                <br>
+                <button class="btn btn-primary" id="btnLogin">Login</button>
+            </form>
+            <div class="text-danger pt-3">{{error}}</div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+document.getElementById('togglePassword').addEventListener('change', function (e) {
+    const passwordField = document.getElementById('password');
+    if (e.target.checked) {
+        passwordField.type = 'text';
+    } else {
+        passwordField.type = 'password';
+    }
+});
+</script>

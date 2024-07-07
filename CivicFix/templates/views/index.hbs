@@ -1,0 +1,38 @@
+<h2 style="text-align: center;">Welcome to CivicFix</h2>
+<h3 style="text-align: center;">We offer exclusive parts for Honda Civics</h3>
+<br>
+<h2 style="text-align: center;">Clients</h2>
+<p style="text-align: center;">
+    Browse our inventory by clicking on the parts icon to view details such as part numbers, specific model years, and quantities needed.
+    Make your purchase easily and keep your Civic running smoothly!
+</p>
+<br>
+
+<h2 style="text-align: center;">Employees</h2>
+<p style="text-align: center;">
+    Manage inventory by adding, editing, or deleting parts from the database!
+</p>
+<br>
+{{#if isLoggedIn}}
+<div style="text-align: center;">
+    <p href="/logout"
+        style="display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;">You are logged in!</p>
+</div>
+{{else}}
+<div style="text-align: center;">
+    <a href="/login"
+        style="display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #808080;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;">Login</a>
+</div>
+{{/if}}

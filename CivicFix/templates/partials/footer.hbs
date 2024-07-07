@@ -1,0 +1,14 @@
+<footer>
+    <div>
+            <a href="/">Home</a> -
+            {{#if isLoggedIn}}
+                <a href="/manage">Manage Parts</a> - <a href="/logout">Logout</a>
+            {{else}}
+                <a href="/inventory">Parts</a> - <a href="/cart">My Cart</a>
+            {{/if}}
+    </div>
+    <br>
+    <h2>
+        <h1> CivicFix - {{year}} </h1>
+    </h2>
+</footer>
