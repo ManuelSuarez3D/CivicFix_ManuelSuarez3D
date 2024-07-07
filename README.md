@@ -1,5 +1,5 @@
 # CivicFix by Manuel Suarez
-### JavaScript | Node.js | Express | Handlebars (HBS) | MongoDB (Mongoose) | Visual Studio Code
+### JavaScript | Node.js | Express | Handlebars (HBS) | MongoDB (Mongoose) | REST API | Postman API | Visual Studio Code
 
 # Summary
 CivicFix is a merchant website application specializing in exclusive Honda Civic parts. 
